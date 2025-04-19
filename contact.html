@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="gallery.html">Galerie</a></li>
+                <li><a href="about.html">À propos</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Section contact -->
+    <section class="contact-section">
+        <h2>Contactez-moi</h2>
+        <form action="#" method="post">
+            <label for="name">Nom :</label>
+            <input type="text" id="name" name="name" placeholder="Votre nom" required>
+
+            <label for="email">Email :</label>
+            <input type="email" id="email" name="email" placeholder="Votre email" required>
+
+            <label for="session-date">Date de la séance :</label>
+            <input type="date" id="session-date" name="session-date" required>
+
+            <label for="service-type">Type de service :</label>
+            <select id="service-type" name="service-type">
+                <option value="portrait">Portrait</option>
+                <option value="shoot">Shooting mode</option>
+                <option value="événement">Événement</option>
+            </select>
+
+            <label for="message">Message :</label>
+            <textarea id="message" name="message" placeholder="Votre message" required></textarea>
+
+            <button type="submit">Envoyer</button>
+        </form>
+
+        <!-- Carte de localisation -->
+        <div class="contact-map">
+            <h3>Où me trouver ?</h3>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2625.1021152206866!2d2.2922928156746567!3d48.858844979287775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e671d710b2e37d%3A0x40d91f1fd3cb8f72!2sTour%20Eiffel!5e0!3m2!1sfr!2sfr!4v1602037452253!5m2!1sfr!2sfr" width="100%" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        </div>
+    </section>
+
+    <!-- Footer avec liens sociaux -->
+    <footer>
+        <div class="social-links">
+            <a href="#" class="social-icon">Instagram</a>
+            <a href="#" class="social-icon">Facebook</a>
+            <a href="#" class="social-icon">Twitter</a>
+        </div>
+        <p>&copy; 2025 Photographe de Mode - Tous droits réservés.</p>
+    </footer>
+
+</body>
+</html>

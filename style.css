@@ -1,0 +1,416 @@
+/* Réinitialisation des marges et paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+}
+
+/* Style du header et de la navigation */
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style-type: none;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+/* Section Hero avec fond vidéo */
+.hero {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.hero video {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+}
+
+.hero-content h1 {
+    font-size: 4em;
+    animation: fadeIn 2s ease-out;
+}
+
+.hero-content p {
+    font-size: 1.5em;
+}
+
+.btn {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 1.2em;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #555;
+}
+
+/* Section galerie en vedette */
+.featured-gallery {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.featured-gallery h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.social-links {
+    margin-bottom: 10px;
+}
+
+.social-icon {
+    margin: 0 10px;
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+.social-icon:hover {
+    color: #f1c40f;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.5em;
+    }
+    .hero-content p {
+        font-size: 1.2em;
+    }
+}
+
+/* Modals */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.modal img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.modal.open {
+    display: flex;
+}
+
+/* Carrousel */
+.carousel {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.carousel-images {
+    display: flex;
+    animation: slide 12s infinite linear; /* Animation continue sur 12s */
+    width: 100%; /* Nous avons 4 images donc 100% * 4 = 400% pour le mouvement total */
+}
+
+.carousel img {
+    width: 20%;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Animation du carrousel */
+@keyframes slide {
+    0% {
+        transform: translateX(0); /* Premier état */
+    }
+    25% {
+        transform: translateX(-20%); /* Déplace d'une image à gauche */
+    }
+    50% {
+        transform: translateX(-40%); /* Déplace encore d'une image à gauche */
+    }
+    75% {
+        transform: translateX(-60%); /* Et ainsi de suite */
+    }
+    100% {
+        transform: translateX(0); /* Retour à l'état initial */
+    }
+}
+
+/* Media Queries pour les écrans plus petits */
+@media screen and (max-width: 768px) {
+    .carousel-images {
+        width: 300%; /* Ajuste pour 3 images sur un petit écran */
+    }
+
+    .carousel img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .carousel-images {
+        width: 200%; /* Ajuste pour 2 images sur un très petit écran */
+    }
+
+    .carousel img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+}
+
+
+.carousel img:nth-child(1) {
+    transform: translateX(0);
+}
+
+.carousel img:nth-child(2) {
+    transform: translateX(100%);
+}
+
+.carousel img:nth-child(3) {
+    transform: translateX(200%);
+}
+
+.carousel img:nth-child(4) {
+    transform: translateX(300%);
+}
+
+
+/* Page Contact */
+.contact-section {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.contact-section form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-section label {
+    font-size: 1.2em;
+    margin-top: 10px;
+    display: block;
+}
+
+.contact-section input,
+.contact-section select,
+.contact-section textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1.1em;
+}
+
+.contact-section button {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+.contact-section button:hover {
+    background-color: #555;
+}
+
+.contact-map {
+    margin-top: 40px;
+}
+
+/* À propos */
+.about-section {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.about-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+}
+
+.about-section p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.testimonials {
+    margin-top: 40px;
+}
+
+.testimonial {
+    background-color: #f1f1f1;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.testimonial p {
+    font-size: 1.2em;
+}
+
+.gallery-item {
+    display: inline-block;
+    margin: 10px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.05);
+}
+
+/* Galerie */
+.gallery-page {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.gallery-page h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+}
+
+.gallery-page .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.gallery-page .gallery-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery-page .gallery-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.gallery-page .gallery-item img:hover {
+    transform: scale(1.05);
+}
+
+/* Effet Zoom */
+.zoom {
+    transition: transform 0.5s ease;
+}
+
+.zoom:hover {
+    transform: scale(1.1);
+}
+
+@media screen and (max-width: 768px) {
+    .gallery-page .gallery {
+        grid-template-columns: 1fr 1fr;
+    }
+}
